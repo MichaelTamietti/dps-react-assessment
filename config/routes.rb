@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
   namespace :api do
     # Beers
+    get '/beer_token', to: 'beer#token'
     get 'all_beers', to: 'beers#all'
     get 'beer/:name', to: 'beers#by_name'
     get 'random_beer', to: 'beers#random'
 
     # Breweries
+    get '/brewery_token', to: 'breweries#token'
     get 'all_breweries', to: 'breweries#all'
     get 'brewery/:name', to: 'breweries#by_name'
 

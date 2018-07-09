@@ -2,6 +2,9 @@ class Api::BreweryDbSearchController < ApplicationController
   # brewery_db.search.all(q: 'IPA')
   # brewery_db.search.beers(q: 'IPA')
   # brewery_db.search.breweries(q: 'IPA')
+  def token
+    render json: ENV['BREWERYDB_API_KEY']
+  end
 
   def all
     send_response(brew_client.search.all(q: params[:query], p: @page))
